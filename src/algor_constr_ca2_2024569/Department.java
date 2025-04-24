@@ -9,18 +9,27 @@ package algor_constr_ca2_2024569;
  * @author iveelteddie
  */
 public class Department {
-    private String name;
+    private DepartmentType type;
     private int departmentID;
     private Manager manager;
     
-    public Department(String name, int departmentID) {
-        this.name = name;
+    public Department(DepartmentType type, int departmentID) {
+        this.type = type;
         this.departmentID = departmentID;
+}
+    
+    public DepartmentType getType() {
+        return type;
     }
     
-    public String getName() {
-        return name;
+    public int departmentID() {
+        return departmentID;
     }
+    
+    public Manager getManager() {
+        return manager;
+    }
+    
     public void setManager(Manager manager) {
         this.manager = manager;
     }
