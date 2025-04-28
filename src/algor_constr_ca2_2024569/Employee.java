@@ -10,30 +10,41 @@ package algor_constr_ca2_2024569;
  */
 public class Employee {
     private String name;
-    private int employeeID;
-    private Department departmet;
-    private EmployeeRole role;
+    private EmployeeType employeeType;
+    private ManagerType managerType;
+    private Department department;
+    private boolean isFromFile;
     
-    public Employee (String name, int employeedID, Department department, EmployeeRole role) {
+    public Employee (String name, EmployeeType employeeType, ManagerType managerType, Department department, boolean isFromFile) {
         this.name = name;
-        this.employeeID = employeeID;
-        this.departmet = department;
-        this.role = role;
+        this.employeeType = employeeType;
+        this.managerType = managerType;
+        this.department = department;
+        this.isFromFile = isFromFile; 
     }
     
     public String getName() { 
         return name;
     }
     
-    public int getEmployeeID() {
-        return employeeID;
+    public EmployeeType getEmployeeType() {
+        return employeeType;
+    }
+    
+    public ManagerType getManagerType() {
+        return managerType;
     }
     
     public Department getDepartment() {
         return department;
     }
     
-    public EmployeeRole getRole() {
-        return role;
+    public boolean isFromFile() {
+        return isFromFile;
+    }
+    
+    public String toString() {
+        return "name: " + name + ", Manager: " + managerType + ", Department: " + department + ", Job title: " 
+                + employeeType + ", From file: " + (isFromFile ? "Yes" : "No");
     }
 }

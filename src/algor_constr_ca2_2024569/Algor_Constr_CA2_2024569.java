@@ -5,6 +5,8 @@
 package algor_constr_ca2_2024569;
 
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -15,28 +17,70 @@ public class Algor_Constr_CA2_2024569 {
     /**
      * @param args the command line arguments
      */
+    
+    private static ArrayList<Employee> employees = new ArrayList<>();
+    private static ArrayList<String> allNames = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static Random random = new Random();
+    
     public static void main(String[] args) {
-        private ArrayList<Employee> employees = new ArrayList<>();
-        private ArrayList<Department> departments = new ArrayList<>();
-        
-        // Preparing 4 departments.
-        public Algor_Constr_CA2_2024569() {
-            departments.add(new Department(DepartmentType.IT, 1));
-            departments.add(new Department(DepartmentType.HR, 2));
-            departments.add(new Department(DepartmentType.MARKETING, 3));
-            departments.add(new Department(DepartmentType.FINANCE, 4));
-        }
-        
-        // Show the menu.
-        public void displayMenu() {
-            System.out.println("Please select an option:");
-            System.out.println("1. Sort of all employees");
-            System.out.println("2. Search for employees");
-            System.out.println("3. Add Employee");
-            System.out.println("4. Random Employee");
-            System.out.println("5. Exit");
-            
+        loadFromFile();
+        while (true) {
+            showMenu();
+//            int choice = getValidChoice();
+//            handleMenuChoice(choice);
         }
     }
     
+    public static void loadFromFile() {
+        String filename = "/Users/iveelteddie/NetBeansProjects/Algor_Constr_CA2_2024569/src/algor_constr_ca2_2024569/Applicants_Form.txt";
+        
+    }
+    
+    private static void showMenu() {
+        System.out.println("\n---- Tech Company Management System ----");
+        
+    }
+    
+//    private static int getValidChoice() {
+//        
+//    }
+    
+    private static void handleMenuChoice(int choice) {
+        MenuOption option = MenuOption.values()[choice -1];
+        switch (option) {
+            case SORT:
+                sortDisplayList();
+                break;
+            case SEARCH:
+                searchEmployee();
+                break;
+            case ADD_EMPLOYEE:
+                addNewEmployee();
+                break;
+            case CHOOSE_RANDOM_EMPLOYEES:
+                randomEmployees();
+                break;
+            case EXIT:
+                System.out.println("Exiting program...");
+                System.exit(0); 
+        }
+    }
+    
+    private static void sortDisplayList() {
+        
+    }
+    
+    private static void searchEmployee() {
+        
+    }
+    
+    private static void addNewEmployee() {
+        
+    }
+    
+    private static void randomEmployees() {
+        
+    }
+   
 }

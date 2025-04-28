@@ -12,6 +12,6 @@ public enum MenuOption {
     SORT,
     SEARCH,
     ADD_EMPLOYEE,
-    RANDOM_EMPLOYEE,
+    CHOOSE_RANDOM_EMPLOYEES,
     EXIT
 }

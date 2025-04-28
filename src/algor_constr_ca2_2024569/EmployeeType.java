@@ -8,6 +8,6 @@ package algor_constr_ca2_2024569;
  *
  * @author iveelteddie
  */
-public enum DepartmentType {
-    IT, HR, MARKETING, FINANCE
+public enum EmployeeType {
+    DEVELOPER, ANALYST, DESIGNER, TESTER
 }
