@@ -12,16 +12,17 @@ import java.util.ArrayList;
  */
 public class SortingAlgorithm {
     
-    public static void insertonSort(ArrayList<String> list) {
-        for (int i = 1; i < list.size(); i++) {
-            String key = list.get(i);
-            int j = i - 1;
+    public static void insertonSort(ArrayList<Employee> employees) {
+        int e = employees.size();
+        for (int i = 1; i < e; i++) {
+            Employee pos = employees.get(i);
+            int n = i - 1;
             
-            while (j >= 0 && list.get(j).compareTo(key) > 0) {
-                list.set(j + 1, list.get(j));
-                j--;
+            while (n >= 0 && employees.get(n).getName().compareTo(pos.getName()) > 0) {
+                employees.set(n + 1, employees.get(n));
+                n--;
             }
-            list.set(j + 1, key);
+            employees.set(n + 1, pos);
         }
     }
 }

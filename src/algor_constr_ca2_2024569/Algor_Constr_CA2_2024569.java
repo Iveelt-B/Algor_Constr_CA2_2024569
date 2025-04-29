@@ -27,8 +27,8 @@ public class Algor_Constr_CA2_2024569 {
         loadFromFile();
         while (true) {
             showMenu();
-//            int choice = getValidChoice();
-//            handleMenuChoice(choice);
+            int choice = getValidChoice(MenuOption.values().length);
+            handleMenuChoice(choice);
         }
     }
     
@@ -37,15 +37,33 @@ public class Algor_Constr_CA2_2024569 {
         
     }
     
+    // Show the menu.
     private static void showMenu() {
-        System.out.println("\n---- Tech Company Management System ----");
-        
+        System.out.println("--- Tech Company Management System ---");
+        for (int n = 0; n < MenuOption.values().length; n++) {
+            System.out.println((n + 1) + ". " + MenuOption.values()[n]);
+        }
+        System.out.println("Select an option: ");   // Ask the user for a choice.
     }
     
-//    private static int getValidChoice() {
-//        
-//    }
+    // Get the user's choice.
+    private static int getValidChoice(int max) {
+        // Repeat until you get the correct choice.
+        while (true) {  
+            try {
+                int choice = Integer.parseInt(scanner.nextLine());      // Read the selection.
+                if (choice >= 1 && choice <= max) {  // If the selection is within the correct range.
+                    return choice;  // Return the selection.
+                }
+                // Incorrect selection.
+                System.out.println("Invalid choice. Please enter a number between 1 and " + max + ": ");
+            } catch (NumberFormatException e) {     // If not a number. 
+                System.out.println("Please enter a valid number: ");    // Enter for correct number input.
+            }    
+        }
+    }
     
+    // Take action based on menu selection. 
     private static void handleMenuChoice(int choice) {
         MenuOption option = MenuOption.values()[choice -1];
         switch (option) {
@@ -67,8 +85,17 @@ public class Algor_Constr_CA2_2024569 {
         }
     }
     
+    // Sort the list and show the first 20 employees.
     private static void sortDisplayList() {
-        
+        if (employees.isEmpty()) {
+            System.out.println("List is empty!\n");
+            return;
+        }
+        SortingAlgorithm.insertonSort(employees);
+        System.out.println("First 20 sorted people:\n");
+        for (int e = 0; e < Math.min(20, employees.size()); e++) {
+            System.out.println(employees.get(e));
+        }
     }
     
     private static void searchEmployee() {
