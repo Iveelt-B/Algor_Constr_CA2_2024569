@@ -15,11 +15,11 @@ public class Employee {
     private Department department;
     private boolean isFromFile;
     
-    public Employee (String name, EmployeeType employeeType, ManagerType managerType, Department department, boolean isFromFile) {
+    public Employee (String name, EmployeeType employeeType, Department department, ManagerType managerType, boolean isFromFile) {
         this.name = name;
-        this.employeeType = employeeType;
-        this.managerType = managerType;
+        this.employeeType = employeeType;      
         this.department = department;
+        this.managerType = managerType;
         this.isFromFile = isFromFile; 
     }
     

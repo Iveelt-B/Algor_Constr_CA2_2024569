@@ -4,6 +4,9 @@
  */
 package algor_constr_ca2_2024569;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -34,7 +37,14 @@ public class Algor_Constr_CA2_2024569 {
     
     public static void loadFromFile() {
         String filename = "/Users/iveelteddie/NetBeansProjects/Algor_Constr_CA2_2024569/src/algor_constr_ca2_2024569/Applicants_Form.txt";
-        
+        try (BufferedReader bufReader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = bufReader.readLine()) != null) {
+                line = line.trim();                 
+                }       
+            } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
     }
     
     // Show the menu.
@@ -80,7 +90,7 @@ public class Algor_Constr_CA2_2024569 {
                 randomEmployees();
                 break;
             case EXIT:
-                System.out.println("Exiting program...");
+                System.out.println("Exited the program.");
                 System.exit(0); 
         }
     }
@@ -116,7 +126,40 @@ public class Algor_Constr_CA2_2024569 {
         
     
     private static void addNewEmployee() {
+        System.out.print("Enter the name of the employee: ");
+        String name = scanner.nextLine();
+        if (name.trim().isEmpty()) { 
+            System.out.println("Name cannot be empty!"); 
+            return; 
+        }
+        allNames.add(name); // Add name to allNames list
         
+        System.out.println("--- Select Employee Position:");            // Enter to select employee type.
+        for (EmployeeType empType : EmployeeType.values()) {        // Iterate through employee types.
+            System.out.println((empType.ordinal() + 1) + ". " + empType); // Print each employee type.
+        }
+        int employeeChoice = getValidChoice(EmployeeType.values().length);     // Get valid employee type choice.
+        EmployeeType employeeType = EmployeeType.values()[employeeChoice - 1]; // Retrieve selected employee type.
+        
+        
+        System.out.println("--- Select Department: ");
+        for (Department dept : Department.values()) {
+            System.out.println(dept.ordinal() + 1 + "." + dept);
+        }
+        int departmentChoice = getValidChoice(Department.values().length);    // Get valid department choice.
+        Department department = Department.values()[departmentChoice - 1];    // Retrieve selected department.
+        
+        
+        System.out.println("--- Select Manager Type:");     // Enter to select manager type.
+        for (ManagerType type : ManagerType.values()) { // Iterate through manager types.
+            System.out.println((type.ordinal() + 1) + ". " + type); // Print each manager type.
+        }
+        int managerChoice = getValidChoice(ManagerType.values().length);   // Get valid manager type choice.
+        ManagerType managerType = ManagerType.values()[managerChoice - 1]; // Retrieve selected manager type.
+        
+        Employee employee = new Employee(name, employeeType, department, managerType, false);
+        employees.add(employee);
+        System.out.println("** " + name + " has been added successfully! **");        // Confirm successful addition.
     }
     
     private static void randomEmployees() {
