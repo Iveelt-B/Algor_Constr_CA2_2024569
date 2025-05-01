@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class SortingAlgorithm {
     
-    public static void insertonSort(ArrayList<Employee> employees) {
+    public static void insertionSort(ArrayList<Employee> employees) {
         int e = employees.size();
         for (int i = 1; i < e; i++) {
             Employee pos = employees.get(i);

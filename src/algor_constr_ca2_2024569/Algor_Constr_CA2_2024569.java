@@ -91,7 +91,7 @@ public class Algor_Constr_CA2_2024569 {
             System.out.println("List is empty!\n");
             return;
         }
-        SortingAlgorithm.insertonSort(employees);
+        SortingAlgorithm.insertionSort(employees);
         System.out.println("First 20 sorted people:\n");
         for (int e = 0; e < Math.min(20, employees.size()); e++) {
             System.out.println(employees.get(e));
@@ -99,8 +99,21 @@ public class Algor_Constr_CA2_2024569 {
     }
     
     private static void searchEmployee() {
-        
+        if (employees.isEmpty()) {                  // If the list is empty.
+            System.out.println("List is empty!");   // Print message.
+            return;                                 // Exit the function.
+        }
+        System.out.println("Enter name to search: ");   // Enter for name input.
+        String name = scanner.nextLine();               // Read the input name.
+        SortingAlgorithm.insertionSort(employees);      // Sort the list before Binary Search.
+        Employee found = SearchAlgorithm.binarySearchRecursive(employees, name);     // Call recursive Binary Search.
+        if (found != null) {                            // If a employee is found.
+            System.out.println("Found: " + found);      // Print the found employee's details.
+        } else {                                        // If no employee is found.
+            System.out.println("Employee not found!");  // Print message.
+        }
     }
+        
     
     private static void addNewEmployee() {
         
