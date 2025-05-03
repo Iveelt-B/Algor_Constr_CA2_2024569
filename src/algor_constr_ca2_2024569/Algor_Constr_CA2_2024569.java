@@ -40,16 +40,59 @@ public class Algor_Constr_CA2_2024569 {
         try (BufferedReader bufReader = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = bufReader.readLine()) != null) {
-                line = line.trim();                 
-                }       
-            } catch (IOException e) {
+                line = line.trim();
+                if (line.isEmpty()) {
+                    continue;
+                }
+                String[] parts = line.split(","); 
+                if (parts.length != 4) { 
+                    System.out.println("Invalid line format: Incorrect format or Extra fields in line:  " + line);
+                    continue; 
+                }
+                
+                String name = parts[0].trim();
+                String employeeTypeStr = parts[1].trim(); 
+                String departmentStr = parts[2].trim(); 
+                String managerTypeStr = parts[3].trim();
+                
+                if (name.isEmpty()) { 
+                    System.out.println("Missing or Name is empty!:  " + line); 
+                    continue; 
+                }
+                if (employeeTypeStr.isEmpty()) { 
+                    System.out.println("Missing or EmployeeType is empty!:  " + line); 
+                    continue; 
+                }
+                if (departmentStr.isEmpty()) { 
+                    System.out.println("Missing or Department is empty!:    " + line); 
+                    continue; 
+                }
+                if (managerTypeStr.isEmpty()) { 
+                    System.out.println("Missing or ManagerType is empty!:   " + line); 
+                    continue; 
+                }
+                
+                try {
+                    EmployeeType employeeType = EmployeeType.valueOf(employeeTypeStr); 
+                    Department department = Department.valueOf(departmentStr); 
+                    ManagerType managerType = ManagerType.valueOf(managerTypeStr); 
+                    allNames.add(name); 
+                    Employee employee = new Employee(name, employeeType, department, managerType, true); 
+                    employees.add(employee); 
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Invalid enum value for employeeType, Department, or ManagerType in line: " + line);
+                    continue;
+                }
+            }
+            System.out.println("\n*** File Read Successfully ***");
+        } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
         }
     }
     
     // Show the menu.
     private static void showMenu() {
-        System.out.println("--- Tech Company Management System ---");
+        System.out.println("\n--- Tech Company Management System ---");
         for (int n = 0; n < MenuOption.values().length; n++) {
             System.out.println((n + 1) + ". " + MenuOption.values()[n]);
         }

@@ -1,24 +1,27 @@
-Iveelt Batjargal
-LeBron James
-Luka Doncic
-Austin Reaves
-Rui Hachimura
-Dorian Finney-Smith
-Jarred Vanderbilt
-Alex Caruso
-Jaxson Hayes
-Dalton Knecht
-Jordan Goodwin
-Gabe Vincent
-Shake Milton
-Bronny James
-Trey Jemison III
-Christian Koloko
-JJ Redick
-Nate McMillan
-Scott Brooks
-Bob Beyer
-Greg St. Jean
-Lindsey Harding
-Beau Levesque
-Michael Wexler
+Iveelt Batjargal,DESIGNER,MARKETING,PROJECT_MANAGER
+Lebron James,ANALYST,HR,TEAM_LEAD
+Luka Doncic,ANALYST,MARKETING,SENIOR_MANAGER
+Austin Reaves,TESTER,FINANCE,TECHNICAL_LEAD
+Rui Hachimura,DEVELOPER,IT,TEAM_LEAD
+Dorian Finney-Smith,ANALYST,MARKETING,SENIOR_MANAGER
+Jarred Vanderbilt,TESTER,HR,PROJECT_MANAGER
+Alex Caruso,DESIGNER,FINANCE,TECHNICAL_LEAD
+Jaxson Hayes,DEVELOPER,IT,SENIOR_MANAGER
+Dalton Knecht,,HR,TEAM_LEAD 
+Jordan Goodwin,DEVELOPER,,SENIOR_MANAGER 
+Gabe Vincent,ANALYST,FINANCE, ,
+Shake Milton,DEVELOPER,IT,SENIOR_MANAGER
+Bronny James,ANALYST,HR,TEAM_LEAD
+Trey Jemison III,DESIGNER,MARKETING,PROJECT_MANAGER
+Christian Koloko,TESTER,FINANCE,TECHNICAL_LEAD
+JJ Redick,DEVELOPER,IT,TEAM_LEAD
+Nate McMillan,ANALYST,MARKETING,SENIOR_MANAGER
+Scott Brooks,TESTER,HR,PROJECT_MANAGER
+Bob Beyer,DESIGNER,FINANCE,TECHNICAL_LEAD
+Greg St,TESTER,HR,PROJECT_MANAGER
+Lindsey Harding.DEVELOPER,IT,SENIOR_MANAGER
+Beau Levesque,ANALYST,HR,TEAM_LEAD
+Michael Wexler,DESIGNER,MARKETING,PROJECT_MANAGER
+,DEVELOPER,IT,SENIOR_MANAGER
+Bataa,ANALYST,HR,TEAM_LEAD
+Dorjoo,DESIGNER,FINANCE,TECHNICAL_LEAD
