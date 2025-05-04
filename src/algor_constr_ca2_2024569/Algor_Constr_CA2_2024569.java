@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -93,8 +94,8 @@ public class Algor_Constr_CA2_2024569 {
     // Show the menu.
     private static void showMenu() {
         System.out.println("\n--- Tech Company Management System ---");
-        for (int n = 0; n < MenuOption.values().length; n++) {
-            System.out.println((n + 1) + ". " + MenuOption.values()[n]);
+        for (MenuOption option : MenuOption.values()) {
+            System.out.println((option.ordinal() + 1) + ". " + option.name().replace("_", " "));
         }
         System.out.println("Select an option: ");   // Ask the user for a choice.
     }
@@ -120,10 +121,10 @@ public class Algor_Constr_CA2_2024569 {
     private static void handleMenuChoice(int choice) {
         MenuOption option = MenuOption.values()[choice -1];
         switch (option) {
-            case SORT:
+            case SORT_EMPLOYEES:
                 sortDisplayList();
                 break;
-            case SEARCH:
+            case SEARCH_BY_EMPLOYEE_NAME:
                 searchEmployee();
                 break;
             case ADD_EMPLOYEE:
@@ -206,7 +207,33 @@ public class Algor_Constr_CA2_2024569 {
     }
     
     private static void randomEmployees() {
+        if (allNames.isEmpty()) {
+            System.out.println("No names available to select random employees!");
+            return;
+        }
+        ArrayList<Employee> newEmployees = new ArrayList<>();
+        HashSet<String> usedNames = new HashSet<>();
+        while (newEmployees.size() < 5) {
+            String name = allNames.get(random.nextInt(allNames.size()));
+        if (usedNames.add(name)) {
+            EmployeeType employeeType = EmployeeType.values()[random.nextInt(EmployeeType.values().length)];
+            Department department = Department.values()[random.nextInt(Department.values().length)];
+            ManagerType managerType = ManagerType.values()[random.nextInt(ManagerType.values().length)];
+            
+            boolean isFromFile = allNames.indexOf(name) < employees.size() && employees.get(allNames.indexOf(name)).isFromFile();
+            Employee employee = new Employee(name, employeeType, department, managerType, isFromFile);
+            employees.add(employee);
+            newEmployees.add(employee); 
+            }
+        }
+        System.out.println("--- Randomly selected with a Coach Type and Team:");
+        for (Employee e : newEmployees) {
+            System.out.println(e);
+        }
         
+        System.out.println("--- All employees:");
+        for (Employee e : employees) {
+            System.out.println(e); 
+        }
     }
-   
 }

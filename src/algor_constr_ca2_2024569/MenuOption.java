@@ -9,8 +9,8 @@ package algor_constr_ca2_2024569;
  * @author iveelteddie
  */
 public enum MenuOption {
-    SORT,
-    SEARCH,
+    SORT_EMPLOYEES,
+    SEARCH_BY_EMPLOYEE_NAME,
     ADD_EMPLOYEE,
     CHOOSE_RANDOM_EMPLOYEES,
     EXIT
