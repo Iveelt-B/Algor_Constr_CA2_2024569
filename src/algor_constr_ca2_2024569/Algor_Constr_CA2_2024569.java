@@ -147,7 +147,7 @@ public class Algor_Constr_CA2_2024569 {
             return;
         }
         SortingAlgorithm.insertionSort(employees);
-        System.out.println("First 20 sorted employees:\n");
+        System.out.println("\n** First 20 sorted employees:");
         for (int e = 0; e < Math.min(20, employees.size()); e++) {
             System.out.println(employees.get(e));
         }
