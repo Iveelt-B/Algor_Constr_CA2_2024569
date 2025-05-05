@@ -153,19 +153,44 @@ public class Algor_Constr_CA2_2024569 {
         }
     }
     
+    // Search for a employee by name (supports partial name matching).
     private static void searchEmployee() {
         if (employees.isEmpty()) {                  // If the list is empty.
-            System.out.println("List is empty!");   // Print message.
+            System.out.println("List is empty!");   // Print empty list message.
             return;                                 // Exit the function.
         }
-        System.out.println("Enter name to search: ");   // Enter for name input.
-        String name = scanner.nextLine();               // Read the input name.
+        System.out.println("Enter name to search: ");            // Enter for name input.
+        String query = scanner.nextLine().trim().toLowerCase();  // Read and normalize the input name.
+        if (query.isEmpty()) {   // Check if query is empty.
+            System.out.println("Search name cannot be empty!");  // Print error message.
+            return;     // Exit the function.
+        }
         SortingAlgorithm.insertionSort(employees);      // Sort the list before Binary Search.
-        Employee found = SearchAlgorithm.binarySearchRecursive(employees, name);     // Call recursive Binary Search.
-        if (found != null) {                            // If a employee is found.
-            System.out.println("Found: " + found);      // Print the found employee's details.
-        } else {                                        // If no employee is found.
-            System.out.println("Employee not found!");  // Print message.
+        boolean found = false;
+        Employee exactMatch = SearchAlgorithm.binarySearchRecursive(employees, query);     // Call recursive Binary Search.
+        if (exactMatch != null) {   // If an exact match is found.
+            if (!found) {           // Print if results are found.
+                System.out.println("\nSearch Results:");    // Print for search results.
+            }
+            System.out.println("Found: " + exactMatch);     // Print the exact match.
+            found = true;   // Set found it.
+        }
+        
+        // Search for partial matches by loop through the list.
+        for (Employee employee : employees) {   // loop through all employees.
+            String fullname = employee.getName().toLowerCase();     // Get employees name in lowercase.
+            if (fullname.contains(query)) {      // Check if name contains query.
+                if (exactMatch == null || !employee.getName().equalsIgnoreCase(exactMatch.getName())) {     // Avoid duplicating exact match.
+                    if (!found){    // Print if results are found.
+                        System.out.println("\n** Search Results **");    // Print header for search results.
+                    }
+                    System.out.println("Found: " + employee);   // Print partial match.
+                    found = true;   // Set found it.
+                }
+            }
+        }
+        if (!found) {    // If no matches are found.
+            System.out.println("Employee not found!");  // Print not found message.
         }
     }
         
