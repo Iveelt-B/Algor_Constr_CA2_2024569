@@ -24,6 +24,7 @@ public class Algor_Constr_CA2_2024569 {
     
     private static ArrayList<Employee> employees = new ArrayList<>();
     private static ArrayList<String> allNames = new ArrayList<>();
+    private static ArrayList<Employee> newlyAddedEmployees = new ArrayList<>();     // Store newly added employees.
     private static Scanner scanner = new Scanner(System.in);
     private static Random random = new Random();
     
@@ -146,7 +147,7 @@ public class Algor_Constr_CA2_2024569 {
             return;
         }
         SortingAlgorithm.insertionSort(employees);
-        System.out.println("First 20 sorted people:\n");
+        System.out.println("First 20 sorted employees:\n");
         for (int e = 0; e < Math.min(20, employees.size()); e++) {
             System.out.println(employees.get(e));
         }
@@ -184,6 +185,7 @@ public class Algor_Constr_CA2_2024569 {
         }
         int employeeChoice = getValidChoice(EmployeeType.values().length);     // Get valid employee type choice.
         EmployeeType employeeType = EmployeeType.values()[employeeChoice - 1]; // Retrieve selected employee type.
+        System.out.println("Selected Employee Type: " + employeeType);         // Confirm selected employee type.
         
         
         System.out.println("--- Select Department: ");
@@ -192,18 +194,25 @@ public class Algor_Constr_CA2_2024569 {
         }
         int departmentChoice = getValidChoice(Department.values().length);    // Get valid department choice.
         Department department = Department.values()[departmentChoice - 1];    // Retrieve selected department.
+        System.out.println("Selected Department: " + department);             // Confirm selected department.
         
         
         System.out.println("--- Select Manager Type:");     // Enter to select manager type.
         for (ManagerType type : ManagerType.values()) { // Iterate through manager types.
-            System.out.println((type.ordinal() + 1) + ". " + type); // Print each manager type.
+            System.out.println((type.ordinal() + 1) + ". " + type.name().replace("_", " ") ); // Print each manager type.
         }
         int managerChoice = getValidChoice(ManagerType.values().length);   // Get valid manager type choice.
         ManagerType managerType = ManagerType.values()[managerChoice - 1]; // Retrieve selected manager type.
+        System.out.println("Selected Manager Type: " + managerType);       // Confirm selected manager type.
         
         Employee employee = new Employee(name, employeeType, department, managerType, false);
         employees.add(employee);
+        newlyAddedEmployees.add(employee);      // Add employee to newly added employees list.
         System.out.println("** " + name + " has been added successfully! **");        // Confirm successful addition.
+        System.out.println("\nAll newly added employees:");     // Print all newly added employees.
+        for (Employee e : newlyAddedEmployees) {    // Loop through all newly added employees.
+            System.out.println(e);                  // Print each employees details.
+        }
     }
     
     private static void randomEmployees() {

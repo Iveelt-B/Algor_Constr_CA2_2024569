@@ -44,7 +44,7 @@ public class Employee {
     }
     
     public String toString() {
-        return "Name:" + name + ",  Manager:" + managerType + ",  Department:" + department + ",  Job title:" 
-                + employeeType + ",  From file:" + (isFromFile ? " Yes" : " No (Newly added)");
+        return "Name:" + name + ",  Employee Position:" + employeeType + ",  Department:" + department + ",  Manager Type:" 
+                + managerType + ",  From file:" + (isFromFile ? " Yes" : " No (Newly added)");
     }
 }
