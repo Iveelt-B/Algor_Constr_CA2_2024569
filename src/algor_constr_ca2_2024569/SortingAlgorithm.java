@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class SortingAlgorithm {
     // Initiates recursive Insertion Sort on the ArrayList of employees.
     public static void insertionSort(ArrayList<Employee> employees) {
-        insertionSortRecursive(employees, employees.size());
+        insertionSortRecursive(employees, employees.size());    // Call recursive helper with full list size.
     }
     
     // Recursively sorts the ArrayList using Insertion Sort.

@@ -8,6 +8,7 @@ package algor_constr_ca2_2024569;
  *
  * @author iveelteddie
  */
+// Enum to define possible employee types.
 public enum EmployeeType {
-    DEVELOPER, ANALYST, DESIGNER, TESTER
+    DEVELOPER, ANALYST, DESIGNER, TESTER    // Employee positions.
 }

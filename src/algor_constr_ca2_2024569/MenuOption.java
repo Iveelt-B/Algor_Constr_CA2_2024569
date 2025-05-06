@@ -8,6 +8,7 @@ package algor_constr_ca2_2024569;
  *
  * @author iveelteddie
  */
+// Enum to define menu options for the user interface.
 public enum MenuOption {
     SORT_EMPLOYEES,
     SEARCH_BY_EMPLOYEE_NAME,

@@ -8,6 +8,7 @@ package algor_constr_ca2_2024569;
  *
  * @author iveelteddie
  */
+// Enum to define possible departments.
 public enum Department {
-    IT, HR, MARKETING, FINANCE
+    IT, HR, MARKETING, FINANCE  // Possible departments.
 }

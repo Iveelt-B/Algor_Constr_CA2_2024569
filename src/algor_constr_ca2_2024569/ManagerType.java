@@ -8,6 +8,7 @@ package algor_constr_ca2_2024569;
  *
  * @author iveelteddie
  */
+// Enum to define possible manager types.
 public enum ManagerType {
-    SENIOR_MANAGER, TECHNICAL_LEAD, TEAM_LEAD, PROJECT_MANAGER
+    SENIOR_MANAGER, TECHNICAL_LEAD, TEAM_LEAD, PROJECT_MANAGER  // Possible Manager types.
 }

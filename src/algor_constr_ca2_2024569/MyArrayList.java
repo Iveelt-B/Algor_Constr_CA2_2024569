@@ -10,6 +10,7 @@ import java.util.ArrayList;     // Import ArrayList class.
  *
  * @author iveelteddie
  */
+// Custom class extending ArrayList to implement Binary Search.
 public class MyArrayList<ElemType extends Employee> extends ArrayList<ElemType> {
     // Constructor: Initializes the list with elements from the input ArrayList.
     public MyArrayList(ArrayList<ElemType> employees) {
