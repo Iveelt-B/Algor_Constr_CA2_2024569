@@ -135,7 +135,7 @@ public class Algor_Constr_CA2_2024569 {
                 randomEmployees();          // Call random choose function.
                 break;
             case EXIT:          // Exit the program.
-                System.out.println("Exited the program.");  // Print exit message.
+                System.out.println("* Exited the program *");  // Print exit message.
                 System.exit(0); 
         }
     }
@@ -147,7 +147,7 @@ public class Algor_Constr_CA2_2024569 {
             return;     // Exit the function.
         }
         SortingAlgorithm.insertionSort(employees);                  // Sort the list using recursive Insertion Sort.
-        System.out.println("\n** First 20 sorted employees:");      // Print for sorted list.
+        System.out.println("\n--- First 20 employees in alphabetical sort: ");      // Print for sorted list.
         for (int e = 0; e < Math.min(20, employees.size()); e++) {  // Loop through first 20 employees.
             System.out.println(employees.get(e));                   // Print each employee's details.
         }
@@ -233,7 +233,7 @@ public class Algor_Constr_CA2_2024569 {
         Employee employee = new Employee(name, employeeType, department, managerType, false);   // Create new employee with selected attributes.
         employees.add(employee);                // Add employee to employees list.
         newlyAddedEmployees.add(employee);      // Add employee to newly added employees list.
-        System.out.println("** " + name + " has been added successfully! **");        // Confirm successful addition.
+        System.out.println("*** " + name + " has been added successfully! ***");        // Confirm successful addition.
         System.out.println("\nAll newly added employees:");     // Print all newly added employees.
         for (Employee e : newlyAddedEmployees) {    // Loop through all newly added employees.
             System.out.println(e);                  // Print each employee's details.
@@ -261,12 +261,12 @@ public class Algor_Constr_CA2_2024569 {
             newEmployees.add(employee);     // Add employee to newEmployees list.
             }
         }
-        System.out.println("--- Randomly selected with a Coach Type and Team:");    // Print header for generated employees.
+        System.out.println("\n--- 5 employees randomly selected with a Coach Type and Team:");    // Print header for generated employees.
         for (Employee e : newEmployees) {   // Loop through newly generated employees.
             System.out.println(e);          // Print each employee's details.
         }
         
-        System.out.println("--- All employees:");   // Print header for all employees.
+        System.out.println("\n--- All unsorted employees:");   // Print header for all employees.
         for (Employee e : employees) {  // Loop through all employees.
             System.out.println(e);      // Print each employee's details.
         }
